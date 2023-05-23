@@ -68,25 +68,6 @@ rasters %>%
             ndvi = value) %>%
   saveRDS('Data/NDVI/tweeds.raster/tweeds.raster.rds')
 
-#create a summary to observe the data and obtain the exact values for the coordinates
-ndvi.by.coords<- readRDS('Data/NDVI/tweeds.raster/tweeds.raster.rds')%>%
-  group_by(long, lat)%>%
-  summarise(
-    Mean = mean(ndvi),
-    SD = sd(ndvi),
-    Count = n())
-
-#create an object where the ndvi data is stored
-ndvi <- readRDS('Data/NDVI/tweeds.raster/tweeds.raster.rds')
-
-babyndvi <- ndvi[1:1000,] #extract a small amount of the data to visualize it
-
-#filter out a single coordinate so we can observe the trend in one location
-location1 <- babyndvi%>%
-  filter(long == -127.2368 & lat == 54.54079)
-
-#create a scatterplot to visualize that data
-baby.ndvi.scatter <- plot(location1$date, babyndvi$ndvi)
 
 
 
