@@ -12,8 +12,7 @@ The file `NDVI_data_wrangling.R` includes the code for converting the downloaded
 a data frame with data that could then be fed into a GAM. In this script, the NDVI data was combined with
 spatial information of regions that had been clear cut (referred to as cutblocks). This was a topic of
 interest to some of our research partners who wanted to know how clear cutting affected productivity and 
-forest regeneration. The workflow (including data wrangling and modelling) for cutblocks is an example of  
-what can be done with this project.
+forest regeneration. The workflow (including data wrangling and modelling) for cutblocks is an example of what can be done with this project.
 
 The file `NDVI_gam_model.R` contains the code for the final `gam` that was run using the `mgcv` package
 written by Simon Wood, who kindly wrote a beta location scale function for us to use on this project
